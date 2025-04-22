@@ -3,7 +3,7 @@ from logic import generate_signal
 import time
 import threading
 
-BOT_TOKEN = "8000946649:AAGBUpsVqhRk9e896IYG2_QfxU9lYD-xz7Q"
+BOT_TOKEN = "8000946649:AAFM-5bU0q8dk1E68fOBgsdjpuGVD4Ng0vc"
 bot = telebot.TeleBot(BOT_TOKEN)
 
 active_users = set()
