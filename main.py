@@ -18,7 +18,7 @@ def send_signals_loop(chat_id):
 def start_handler(message):
     chat_id = message.chat.id
     active_users.add(chat_id)
-    bot.send_message(chat_id, "Bot activated! You'll now receive live signals.")
+    bot.send_message(chat_id, "Bot activated! You'll now receive sniper signals 30 seconds before the candle starts.")
     threading.Thread(target=send_signals_loop, args=(chat_id,)).start()
 
 @bot.message_handler(commands=['stop'])
@@ -26,6 +26,6 @@ def stop_handler(message):
     chat_id = message.chat.id
     if chat_id in active_users:
         active_users.remove(chat_id)
-        bot.send_message(chat_id, "Bot stopped. You won't receive further signals.")
+        bot.send_message(chat_id, "Bot stopped. No more signals will be sent.")
 
 bot.polling()
